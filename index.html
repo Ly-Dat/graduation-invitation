@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thư mời Lễ Tốt Nghiệp — Lý Đạt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage" id="stage">
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope">
+      <div class="envelope-body"></div>
+      <div class="letter-peek"></div>
+      <div class="envelope-flap"></div>
+      <button class="seal-btn" id="sealBtn" aria-label="Mở niêm phong">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3a2a06" stroke-width="1.6">
+          <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke-linejoin="round"/>
+          <path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <p class="prompt-text" id="promptText">Chạm vào niêm phong để mở thư</p>
+</div>
+
+<div class="content" id="content">
+
+  <div class="card">
+    <div class="emblem">
+      <img src="assets/images/logo-eiu.png" alt="EIU Logo" style="width:60px; height:auto;">
+    </div>
+    <p class="eyebrow">Thư mời tham dự · You're invited to</p>
+    <h1 class="title-vn serif">Lễ Tốt Nghiệp</h1>
+    <p class="title-en">Commencement Ceremony 2026</p>
+    <p class="grad-line">Trân trọng kính mời quý vị đến chung vui cùng tân khoa</p>
+    <p class="grad-name">Lý Đạt</p>
+    <div class="divider"></div>
+    <div class="detail-grid">
+      <div class="detail">
+        <div class="label">Thời gian</div>
+        <div class="value">Thứ Bảy · 22.08.2026</div>
+        <div class="sub">08:00 – 12:00</div>
+      </div>
+      <div class="detail">
+        <div class="label">Địa điểm</div>
+        <div class="value">TT Hội nghị &amp; Triển lãm Bình Dương</div>
+        <div class="sub">B11 Hùng Vương, P. Bình Dương, TP.HCM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="section-title serif">Đếm ngược đến giờ khai mạc</p>
+    <p class="section-sub">Cùng chờ đón khoảnh khắc vinh danh tân khoa</p>
+    <div class="countdown">
+      <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Ngày</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Giờ</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Phút</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Giây</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="section-title serif">Timeline chương trình</p>
+    <p class="section-sub">Diễn tiến buổi lễ trong ngày 22.08.2026</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <div class="card">
+    <p class="section-title serif">Kính mời</p>
+    <p class="section-sub">Chạm vào tên để xem thiệp mời riêng của bạn</p>
+    <div class="guest-grid" id="guestGrid"></div>
+  </div>
+
+  <footer class="foot">Lý Đạt · EIU Class of 2026 · Với tất cả sự trân trọng</footer>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="invite-card">
+    <button class="close-x" id="closeModal">&times;</button>
+    <p class="invite-eyebrow">Happy Graduation</p>
+    <p class="invite-happy serif">Lý Đạt</p>
+    <div class="invite-photo">
+      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6">
+        <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke-linejoin="round"/>
+        <path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="invite-line">Thân mời</p>
+    <p class="invite-guest serif" id="modalGuestName">—</p>
+    <div class="invite-details">
+      <div><b>Đến:</b> Tham dự Lễ tốt nghiệp của Đạt</div>
+      <div><b>Ngày:</b> Thứ Bảy, 22.08.2026 · 08:00 – 12:00</div>
+      <div><b>Nơi:</b> TT Hội nghị &amp; Triển lãm Bình Dương, B11 Hùng Vương, P. Bình Dương, TP.HCM</div>
+    </div>
+    <p class="invite-tag">New chapter · New journey · New me 🎓</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
