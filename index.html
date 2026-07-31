@@ -16,12 +16,14 @@
     <div class="envelope" id="envelope">
       <div class="envelope-body"></div>
       <div class="letter-peek"></div>
+      <div class="envelope-pocket"></div>
       <div class="envelope-flap"></div>
       <button class="seal-btn" id="sealBtn" aria-label="Mở niêm phong">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#3a2a06" stroke-width="1.6">
-          <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke-linejoin="round"/>
-          <path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5" stroke-linejoin="round"/>
-        </svg>
+       <img
+          src="/assets/images/eiu-logo.png"
+          alt="Graduation Cap"
+          style="width: 65px; height: auto; object-fit: contain;"
+        />
       </button>
     </div>
   </div>
@@ -29,6 +31,11 @@
 </div>
 
 <div class="content" id="content">
+  <button class="content-back-btn" id="backToEnvelopeBtn" aria-label="Quay lại phong thư">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
 
   <div class="card">
     <div class="emblem">
@@ -46,11 +53,34 @@
         <div class="value">Thứ Bảy · 22.08.2026</div>
         <div class="sub">08:00 – 12:00</div>
       </div>
-      <div class="detail">
+      <div class="detail detail--location">
         <div class="label">Địa điểm</div>
         <div class="value">TT Hội nghị &amp; Triển lãm Bình Dương</div>
         <div class="sub">B11 Hùng Vương, P. Bình Dương, TP.HCM</div>
+        <button class="map-toggle-btn" id="mapToggleBtn" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span id="mapToggleText">Xem bản đồ</span>
+          <svg class="map-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
       </div>
+    </div>
+    <div class="map-panel" id="mapPanel">
+      <div class="map-frame">
+        <iframe id="mapIframe" title="Bản đồ địa điểm" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <a class="map-directions-btn"
+        href="https://www.google.com/maps?cid=3179954274633513831&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed"
+        target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+        </svg>
+        Chỉ đường trên Google Maps
+      </a>
     </div>
   </div>
 
@@ -80,27 +110,65 @@
   <footer class="foot">Lý Đạt · EIU Class of 2026 · Với tất cả sự trân trọng</footer>
 </div>
 
-<div class="modal-overlay" id="modalOverlay">
-  <div class="invite-card">
-    <button class="close-x" id="closeModal">&times;</button>
+<!-- popup nhập mã -->
+<div class="modal-overlay" id="lockOverlay">
+  <div class="invite-card invite-card--popup">
+    <button class="close-x" id="closeLock">&times;</button>
+    <div class="invite-lock" id="inviteLock">
+      <p class="invite-eyebrow">Thiệp mời riêng của</p>
+      <p class="invite-guest serif" id="lockGuestName">—</p>
+      <p class="invite-line" style="margin-top:6px;">Nhập mã 6 số bạn đã nhận để mở thiệp</p>
+      <input type="text" id="codeInput" class="code-input" maxlength="6" inputmode="numeric" placeholder="• • • • • •" autocomplete="off">
+      <button class="code-submit" id="codeSubmit">Mở thiệp</button>
+      <p class="code-error" id="codeError">Mã không đúng, thử lại nhé.</p>
+    </div>
+  </div>
+</div>
+
+<!-- full-screen sau khi mở khoá -->
+<div class="reveal-panel" id="revealPanel">
+  <button class="back-btn" id="closeReveal" aria-label="Quay lại">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <div class="invite-card invite-card--full">
+  <div class="invite-left">
     <p class="invite-eyebrow">Happy Graduation</p>
     <p class="invite-happy serif">Lý Đạt</p>
     <div class="invite-photo">
-      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6">
-        <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke-linejoin="round"/>
-        <path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5" stroke-linejoin="round"/>
-      </svg>
+      <img
+        src="/assets/images/avatar.png"
+        alt="Graduation Cap"
+        width="100%"
+        height="auto"
+        class="invite-avatar-img"
+      />
     </div>
+  </div>
+  <div class="invite-right">
     <p class="invite-line">Thân mời</p>
     <p class="invite-guest serif" id="modalGuestName">—</p>
+    <p class="invite-thanks" id="modalThanks"></p>
     <div class="invite-details">
       <div><b>Đến:</b> Tham dự Lễ tốt nghiệp của Đạt</div>
       <div><b>Ngày:</b> Thứ Bảy, 22.08.2026 · 08:00 – 12:00</div>
       <div><b>Nơi:</b> TT Hội nghị &amp; Triển lãm Bình Dương, B11 Hùng Vương, P. Bình Dương, TP.HCM</div>
     </div>
-    <p class="invite-tag">New chapter · New journey · New me 🎓</p>
+    <div class="invite-tag-wrap">
+      <div class="invite-tag-logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+          <path d="M12 3 2 8l10 5 10-5-10-5Z" stroke-linejoin="round"/>
+          <path d="M6 10.5V16c0 1 2.7 3 6 3s6-2 6-3v-5.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="invite-tag" id="inviteTagText">New chapter · New journey · New me 🎓</p>
+    </div>
   </div>
 </div>
+</div>
+
+<canvas id="confettiCanvas" style="position:fixed; inset:0; z-index:60; pointer-events:none;"></canvas>
 
 <script src="script.js"></script>
 </body>
