@@ -163,7 +163,7 @@ const guests = [
 ];
 
 // ---- avatar dùng chung cho vòng tròn lớn (luôn là ảnh của Đạt) ----
-const AVATAR_HTML = `<img src="/assets/images/avatar.png" alt="Lý Đạt" class="invite-avatar-img" />`;
+const AVATAR_HTML = `<img src="assets/images/avatar.png" alt="Lý Đạt" class="invite-avatar-img" />`;
 
 // ---- icon nhỏ theo từng loại thiệp (dùng cho invite-tag-logo) ----
 const TAG_ICONS = {

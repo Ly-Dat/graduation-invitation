@@ -112,7 +112,7 @@ body{
   position:absolute;
   left:6%; right:6%; bottom:6%;
   top:20%;
-  background-image: url("/assets/images/banner-tot-nghiep.jpg");
+  background-image: url("assets/images/banner-tot-nghiep.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
