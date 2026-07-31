@@ -97,68 +97,81 @@ setInterval(renderTimeline, 60000);
 // birthday: chỉ cần thiết khi type === "birthday" (vd "25/08") — hiện thêm dòng chúc mừng sinh nhật
 const guests = [
   {
-    name: "Ngọc Ánh",
+    name: "Eiu❤️",
     code: "110602",
     type: "love",
-    message: "Cảm ơn em đã luôn ở bên anh trong suốt hành trình này."
+    message: "Cảm ơn em đã luôn ở bên anh trong suốt hành trình này, cùng anh trải qua những năm tháng tươi đẹp nhất. Thật tuyệt khi vào khoản khắc tuyệt vời này có em ở bên cạnh anh, anh pé iu em nhiều nhắm. ❤️"
+  },
+  {
+    name: "chị Thảo",
+    code: "160803",
+    type: "birthday",
+    birthday: "16/08",
+    message: "Cảm ơn chị Thảo đã giành thời gian tham gia buổi lễ tốt nghiệp của em. Ôi em ko có gì hơn chỉ muốn gửi tới chị một lời cảm ơn chân thành nhất. Cảm ơn chị!"
+  },
+  {
+    name: "chị Trang",
+    code: "110602",
+    type: "normal",
+    message: "Cảm ơn chị Trang đã giành thời gian tham gia buổi lễ tốt nghiệp của em. Em rất vui khi chị tới dự ạ. Cảm ơn chị đã giành thời gian tới dự ạ!"
   },
   {
     name: "Khánh Hà",
     code: "200905",
     type: "birthday",
     birthday: "20/09",
-    message: "Cảm ơn Hà đã luôn động viên mình những lúc deadline dí, có Hà bên cạnh đúng là may mắn nhất năm học vừa rồi."
+    message: "Cảm ơn k.hà đã giành thời gian tham gia buổi lễ tốt nghiệp của lidet. Trời ơi quý hóa lắm mới mời được k.hà tới á. Nói j thì nói chứ lidet cũng cảm ơn k.hà nhiều nè!"
   },
   {
     name: "Lê Quân",
     code: "121205",
     type: "normal",
-    message: "Cảm ơn"
+    message: "Cảm ơn Quân đã tới dự buổi lễ tốt nghiệp của lidet. Ôi đã đẹp trai cao to còn hết lòng vì bạn bè nữa chứ. Rất vui đc chào đón Quân tới nhá!"
   },
   {
     name: "Linh Kỳ",
     code: "150905",
     type: "birthday",
     birthday: "15/09",
-    message: "Cảm ơn"
+    message: "Cảm ơn lki đã giành thời gian tham gia buổi lễ tốt nghiệp của lidet. Người gì mà vừa xink gái lại vừa giỏi nữa chứ. Rất vinh dự được mời lki tới dự buổi lễ TN của lidet nè!"
   },
   {
     name: "Khánh Xuân",
     code: "300405",
     type: "normal",
-    message: "Cảm ơn"
+    message: "Cảm ơn tổ trưởng đã đồng ý tham dự buổi lễ tốt nghiệp của lidet. Nói chứ lidet cũng cảm động lắm khi có k.xuan đến dự lễ TN cùng với lidet. Cảm ơn k.xuan rất nhiều!"
   },
   {
     name: "Kiều Trang",
     code: "210205",
     type: "normal",
-    message: "Cảm ơn"
+    message: "Cảm ơn bạn Kiều Trang đã tới tham gia buổi lễ tốt nghiệp của lidet. Ôi bạn Trang thật là tốt khi đã ko quãng đường xa tới dự, người gì mà vừa đẹp người vừa đẹp nết. Cảm ơn ạ!"
   },
   {
     name: "Thúy Uyên",
     code: "040705",
     type: "birthday",
     birthday: "04/07",
-    message: "Cảm ơn"
+    message: "Cảm ơn Thúy Uyên đã tới dự buổi lễ tốt nghiệp của lidet. Tổ mình Thúy Uyên là vễ thưn nhất á, người gì mà vừa xink lại vừa tốt bụng. Cảm ơn Thúy Uyên nhá!"
   },
   {
     name: "Thảo Vân",
     code: "181205",
     type: "normal",
-    message: "Cảm ơn"
+    message: "Cảm ơn bạn Vân đã giành thời gian tham gia buổi lễ tốt nghiệp của lidet. Bạn Vân vừa xink đẹp, vừa chụp hình đẹp lại còn vẽ đẹp nữa. Thật vinh dự khi bạn Vân có thể đến. Cảm ơn thvan nhiều nhiều!"
   },
   {
     name: "Thanh Ngân",
     code: "310705",
     type: "birthday",
     birthday: "31/07",
-    message: "Cảm ơn"
+    message: "Cảm ơn thngan đã giành thời gian tới dự buổi lễ tốt nghiệp của lidet. Biết là nhà thngan khó, thngan cũng khó đi nhưng thngan vẫn tới dự buổi lễ tốt nghiệp của lidet. Lidet cảm động lắm. Cảm ơn thngan nhiều lắm!"
   },
   {
     name: "Phúc Ngân",
-    code: "000000",
+    code: "211105",
     type: "normal",
-    message: "Cảm ơn"
+    message: "Cảm ơn Phúc Ngân đã giành thời gian tham gia buổi lễ tốt nghiệp của lidet. Cảm ơn fngan đã không quản đường xá xa xôi để đến tham gia cùng lidet và tổ mình. Cảm ơn fngan nhiều nha!"
   },
 ];
 
